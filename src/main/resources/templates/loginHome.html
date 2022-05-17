@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css"
+          th:href ="@{/css/bootstrap.min.css}"rel="stylesheet">
+    <title>Title</title>
+</head>
+
+<body>
+<div>
+    <div>
+        <h2>나만의 블로그</h2>
+    </div>
+
+    <div>
+        <p th:text="${member_id} + '님 안녕하세요'" >empty</p>
+        <ul>
+            <a href="/logout">로그아웃</a> <br>
+            <a href="/board/add"> 게시물 작성</a> <br>
+            <a href="/board/boards"> 게시물 목록</a> <br>
+
+
+            <a href="/member/memberList"> 회원조회</a>
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>

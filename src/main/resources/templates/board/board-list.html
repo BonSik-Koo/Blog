@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="container">
+    <dir>
+        <h2>나만의 블로그</h2>
+    </dir>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>name</th>
+                <th>title</th>
+                <th>context</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="board : ${boards}">
+                <td  th:text="${board.name}"></td>
+                <td>  <a th:href="@{/board/{boardId}(boardId=${board.id})}" th:text="${board.title}"> </a></td>
+                <td th:text="${board.context}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

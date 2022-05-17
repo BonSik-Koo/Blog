@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<dir>
+    <dir>
+        <h2>나만의 블로그</h2>
+    </dir>
+
+    <dir>
+    <form th:action="@{/board/add}" method="post" th:object="${boardSaveForm}" >
+
+        <div>
+            <label for="id"> ID</label>
+            <input type="text" id="id" th:name="name" th:value="${memberId}" readonly >
+        </div>
+
+        <div>
+            <label for="title"> title</label>
+            <input type="text" id="title" th:field="*{title}">
+            <div th:errors="*{title}" />
+        </div>
+
+        <div>
+            <label for="context"> context</label>
+            <input type="text" id="context" th:field="*{context}" style="width:300px;height:500px;" >
+            <div th:errors="*{context}" />
+        </div>
+
+        <button type="submit"> 게시 </button>
+    </form>
+    </dir>
+
+</dir>
+</body>
+</html>
